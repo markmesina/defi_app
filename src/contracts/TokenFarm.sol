@@ -45,7 +45,7 @@ contract TokenFarm {
   }
 
   //issuing tokens (interest)
-  function issueToken() public {
+  function issueTokens() public {
     require(msg.sender == owner, 'token issuer must be the owner');
 
     // loop through all people who have staked and issue token
