@@ -76,4 +76,3 @@ contract TokenFarm {
     isStaking[msg.sender] = false;
 
   }
-}
