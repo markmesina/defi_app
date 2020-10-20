@@ -20,7 +20,7 @@ contract TokenFarm {
     dappToken = _dappToken; //pass down smart contract
     daiToken = _daiToken;
     owner = msg.sender; // assign owner
-  };
+  }
 
   // stake tokens (investor deposits)
   function stakeTokens(uint _amount) public {
@@ -36,12 +36,12 @@ contract TokenFarm {
     // add user to stakers array if they haven't
     if(!hasStaked[msg.sender]) {
       stakers.push(msg.sender);
-    };
+    }
 
     //update staking status
     isStaking[msg.sender] = true;
     hasStaked[msg.sender] = true;
-  };
+  }
 
   //issuing tokens (interest)
   function issueTokens() public {
@@ -54,9 +54,9 @@ contract TokenFarm {
 
       if (balance > 0) {
         dappToken.transfer(recipient, balance); // 1 to 1 trade. 1mDai = 1DappToken
-      };
-    };
-  };
+      }
+    }
+  }
 
   //unstaking tokens (withdraw)
   function unstakeTokens() public {
@@ -75,5 +75,5 @@ contract TokenFarm {
     //update staking status
     isStaking[msg.sender] = false;
 
-  };
-};
+  }
+}
